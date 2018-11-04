@@ -1,24 +1,15 @@
-pipeline{
-    
-agent any
-
-stages{
-
+node{
+def app
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-
-        node{
-           checkout scm
-  		}
+        checkout scm
     }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-		node{
-          def app = docker.build("timgondasr/hellonode")
-        }
+        app = docker.build("timgondasr/hellonode")
     }
 
     stage('Test image') {
@@ -61,6 +52,4 @@ stages{
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
     }
-}
-
 }
