@@ -14,7 +14,7 @@ stages{
 	        /* This builds the actual image; synonymous to
 	         * docker build on the command line */
 	
-	        def app = docker.build("timgondasr/hellonode")
+	        app = docker.build("timgondasr/hellonode")
 	    }
 	
 	    stage('Test image') {
