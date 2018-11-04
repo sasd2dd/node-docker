@@ -4,7 +4,7 @@ agent any
 
 stages{
 
-node {
+
     def app
 
     stage('Clone repository') {
@@ -61,5 +61,5 @@ node {
          * Pushing multiple tags is cheap, as all the layers are reused. */
     }
 }
-}
+
 }
