@@ -52,4 +52,9 @@ def app
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
     }
+    post { 
+        always { 
+            echo 'I will always Run!'
+        }
+    }
 }
